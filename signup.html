@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="brand">
+                <a href="index.html"><i class="fas fa-shield-alt"></i>AadiAuth</a>
+            </div>
+            <div class="nav-links">
+                <a href="signin.html">Sign In</a>
+                <a href="signup.html">Sign Up</a>
+                <a href="forgot-password.html">Help</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="auth-box">
+            <h2>Join AadiAuth</h2>
+            <form id="sign-up-form">
+                <div class="form-group">
+                    <label><i class="fas fa-user"></i> Full Name</label>
+                    <input type="text" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-lock"></i> Password</label>
+                    <div class="password-input-container">
+                        <input type="password" name="password" required>
+                        <i class="fas fa-eye password-toggle"></i>
+                    </div>
+                </div>
+                <button type="submit"><i class="fas fa-user-plus"></i> Sign Up</button>
+                <div class="links">
+                    <a href="signin.html"><i class="fas fa-sign-in-alt"></i> Already have an account? Sign In</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> AadiAuth by Aaditya. All rights reserved.</p>
+    </footer>
+
+    <!-- Add this script right before the closing body tag in all HTML files -->
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

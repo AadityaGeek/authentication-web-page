@@ -1,0 +1,670 @@
+/* Add this at the very top of your CSS file */
+:root {
+    /* Primary colors */
+    --primary-dark: #1a237e;
+    --primary-light: #0277bd;
+    
+    /* Text colors */
+    --text-primary: #455a64;
+    --text-secondary: #e0e0e0;
+    
+    /* Background colors */
+    --bg-primary: rgba(255, 255, 255, 0.98);
+    --bg-gradient-start: #1a237e;
+    --bg-gradient-end: #0277bd;
+    
+    /* Border colors */
+    --border-color: #e0e0e0;
+    
+    /* Status colors */
+    --success-bg: rgba(46, 204, 113, 0.1);
+    --success-color: #27ae60;
+    --success-border: rgba(46, 204, 113, 0.3);
+    
+    --error-bg: rgba(231, 76, 60, 0.1);
+    --error-color: #e74c3c;
+    --error-border: rgba(231, 76, 60, 0.3);
+    
+    /* Shadow colors */
+    --shadow-color: rgba(0, 0, 0, 0.15);
+    --shadow-color-hover: rgba(0, 0, 0, 0.2);
+}
+
+/* Shared Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+}
+
+header {
+    background: var(--bg-primary);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 15px var(--shadow-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    background: linear-gradient(45deg, var(--primary-dark), var(--primary-light));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.5px;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+}
+
+.brand:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-links a {
+    margin-left: 2rem;
+    text-decoration: none;
+    color: var(--primary-dark);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-light);
+}
+
+#user-name {
+    font-weight: 500;
+    color: var(--primary-dark);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+}
+
+#sign-out-btn {
+    background: transparent;
+    color: var(--primary-dark);
+    border: 2px solid var(--primary-dark);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    height: 36px;
+    min-width: 100px;
+    margin-left: 1rem;
+    width: auto;
+    font-size: 0.9rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+    margin-top: 0;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    margin-top: 80px;
+}
+
+.auth-box {
+    background: var(--bg-primary);
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px var(--shadow-color);
+    width: 100%;
+    max-width: 420px;
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.auth-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px var(--shadow-color-hover);
+}
+
+h2 {
+    color: var(--primary-dark);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 600;
+    background: linear-gradient(45deg, var(--primary-dark), var(--primary-light));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.form-group {
+    margin-bottom: 1.8rem;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    padding-left: 3px;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.9rem;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(2, 119, 189, 0.1);
+}
+
+button {
+    /* margin-top: 10px; */
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary-dark);
+    color: var(--bg-primary);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(26, 35, 126, 0.2);
+}
+
+.links {
+    margin-top: 1.8rem;
+    text-align: center;
+}
+
+.links a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 0.8rem;
+    white-space: nowrap;
+}
+
+.links a:last-child {
+    margin-bottom: 0;
+}
+
+.links a:hover {
+    color: var(--primary-light);
+}
+
+footer {
+    background: var(--bg-primary);
+    padding: 1.2rem;
+    text-align: center;
+    color: var(--text-primary);
+    margin-top: auto;
+    font-weight: 500;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+    .auth-box {
+        padding: 2rem;
+        margin: 1rem;
+        width: 90%;
+        min-width: 280px;
+        max-width: 100%;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+    
+    .form-group input {
+        padding: 0.8rem;
+        font-size: 16px;
+    }
+    
+    button {
+        padding: 0.8rem;
+        font-size: 16px;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    header {
+        padding: 0.8rem;
+    }
+    
+    .nav-links a {
+        margin-left: 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .brand {
+        font-size: 1.3rem;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .auth-box {
+        width: 80%;
+        max-width: 500px;
+        padding: 2.5rem;
+    }
+    
+    .container {
+        padding: 1.5rem;
+    }
+}
+
+/* Message container styles */
+.message-container {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.message-container.success {
+    background-color: var(--success-bg);
+    color: var(--success-color);
+    border: 1px solid var(--success-border);
+}
+
+.message-container.error {
+    background-color: var(--error-bg);
+    color: var(--error-color);
+    border: 1px solid var(--error-border);
+}
+
+/* Dashboard styles */
+.dashboard-box {
+    background: var(--bg-primary);
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px var(--shadow-color);
+    width: 100%;
+    max-width: 800px;
+}
+
+#user-details {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(2, 119, 189, 0.05);
+    border-radius: 10px;
+}
+
+#sign-out-btn:hover {
+    background: rgba(26, 35, 126, 0.05);
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+#sign-out-btn .loading-spinner {
+    border: 2px solid rgba(26, 35, 126, 0.3);
+    border-top-color: var(--primary-dark);
+    width: 14px;
+    height: 14px;
+}
+
+/* Loading spinner and button styles */
+.loading-spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: var(--bg-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+@keyframes spin {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Button loading state */
+button.loading {
+    color: transparent;
+    pointer-events: none;
+}
+
+button.loading .loading-spinner {
+    display: block;
+}
+
+.processing-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.processing-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.processing-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(26, 35, 126, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--primary-dark);
+    animation: spin 1s linear infinite;
+}
+
+/* Add these new styles */
+.form-group label i {
+    margin-right: 8px;
+    color: var(--primary-dark);
+    width: 16px;
+}
+
+.links a i {
+    margin-right: 5px;
+    color: var(--text-primary);
+}
+
+button i {
+    margin-right: 8px;
+}
+
+.brand i {
+    margin-right: 8px;
+}
+
+#user-name i {
+    margin-right: 8px;
+}
+
+/* Style for dashboard user details */
+#user-details p i {
+    margin-right: 8px;
+    color: var(--primary-dark);
+    width: 16px;
+}
+
+/* Add password input container styles */
+.password-input-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-input-container input {
+    padding-right: 40px; /* Make space for the eye icon */
+}
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+    padding: 5px;
+    /* Prevent text selection */
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+.password-toggle:hover {
+    color: var(--primary-dark);
+}
+
+/* Add active state for the eye icon */
+.password-toggle.show-password {
+    color: var(--primary-dark);
+}
+
+/* Add these new styles for the landing page */
+.landing-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+}
+
+.hero-section {
+    padding: 6rem 2rem;
+    text-align: center;
+    color: var(--bg-primary);
+    margin-top: 2rem;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--bg-primary), var(--text-secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.cta-button {
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cta-button.primary {
+    background: var(--bg-primary);
+    color: var(--primary-dark);
+}
+
+.cta-button.secondary {
+    background: transparent;
+    color: var(--bg-primary);
+    border: 2px solid var(--bg-primary);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.features-section {
+    background: var(--bg-primary);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.features-section h2 {
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--primary-dark);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 300px));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.feature-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.feature-card p {
+    color: var(--text-primary);
+    line-height: 1.6;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+/* Brand link styles */
+.brand {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Responsive styles for landing page */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .cta-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    .features-section {
+        padding: 3rem 1rem;
+    }
+
+    .features-section h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 4rem 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .feature-card {
+        padding: 1.5rem;
+    }
+
+    .feature-card i {
+        font-size: 2rem;
+    }
+
+    .feature-card h3 {
+        font-size: 1.1rem;
+    }
+}

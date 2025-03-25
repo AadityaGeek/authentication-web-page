@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AadiAuth - Secure Authentication Solution</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+</head>
+<body class="landing-page">
+    <header>
+        <nav>
+            <a href="index.html" class="brand">
+                <i class="fas fa-shield-alt"></i>AadiAuth
+            </a>
+            <div class="nav-links">
+                <a href="signin.html">Sign In</a>
+                <a href="signup.html">Sign Up</a>
+                <a href="forgot-password.html">Help</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to AadiAuth</h1>
+            <p class="hero-subtitle">Secure, Simple, Seamless Authentication</p>
+            <div class="hero-buttons">
+                <a href="signup.html" class="cta-button primary">Get Started <i class="fas fa-arrow-right"></i></a>
+                <a href="signin.html" class="cta-button secondary">Sign In <i class="fas fa-sign-in-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="features-section">
+        <h2>Why Choose AadiAuth?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Secure Authentication</h3>
+                <p>Industry-standard security protocols powered by Firebase Authentication to keep your data safe and protected.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-bolt"></i>
+                <h3>Quick Setup</h3>
+                <p>Get started in minutes with our simple and intuitive authentication system, backed by Google's Firebase infrastructure.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-envelope"></i>
+                <h3>Email Verification</h3>
+                <p>Built-in email verification system using Firebase's secure email services to ensure account security.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-key"></i>
+                <h3>Password Recovery</h3>
+                <p>Easy password reset process through Firebase's secure password recovery system.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-cloud"></i>
+                <h3>Cloud Infrastructure</h3>
+                <p>Powered by Firebase's reliable cloud infrastructure, ensuring high availability and scalability.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-lock"></i>
+                <h3>Data Security</h3>
+                <p>Your data is encrypted and secured using Firebase's enterprise-grade security protocols and Google Cloud Platform.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> AadiAuth by Aaditya. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
